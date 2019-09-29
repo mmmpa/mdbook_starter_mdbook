@@ -1,0 +1,16 @@
+version: '2'
+services:
+  web:
+    user: "$UID:$GID"
+    build: .
+    environment:
+      - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+      - AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
+      - BUCKET_NAME=$BUCKET_NAME
+    volumes:
+     - ./mdbook:/mdbook
+    command: >
+      bash -c '
+      aws s3 sync book s3://$BUCKET_NAME;
+      '

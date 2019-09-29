@@ -1,0 +1,36 @@
+---
+version: 2
+jobs:
+  build:
+    parallelism: 1
+    working_directory: ~/mdb
+    docker:
+      - image: circleci/python:3.6
+    steps:
+      - checkout
+
+      - run:
+          name: build
+          command: |
+            if [[ -n "$BUILDING" ]]; then
+              curl https://github.com/rust-lang-nursery/mdBook/releases/download/v0.3.1/mdbook-v0.3.1-x86_64-unknown-linux-gnu.tar.gz -L -o /tmp/mdbook.tar.gz
+              cd /tmp && tar -zxvf /tmp/mdbook.tar.gz
+              mkdir -p /usr/bin
+              sudo mv /tmp/mdbook /usr/bin/mdbook
+              echo 'export PATH=$PATH:/usr/bin/mdbook' >> $BASH_ENV
+
+              cd ~/mdb/mdbook
+              mdbook build
+            else
+              echo "no BUILDING"
+            fi
+
+      - run:
+          name: deploy
+          command: |
+            if [[ -n "$DEPLOYMENT" ]]; then
+              sudo pip install awscli
+              aws s3 sync ~/mdb/mdbook/book s3://$BUCKET_NAME
+            else
+              echo "no DEPLOYMENT"
+            fi

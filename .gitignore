@@ -1,0 +1,3 @@
+.env
+mdbook/*
+!mdbook/.keep
