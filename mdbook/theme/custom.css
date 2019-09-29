@@ -1,0 +1,59 @@
+ol.chapter li {
+  line-height: 120%;
+  margin: 0.5em;
+}
+
+ol.chapter li ol,
+ol.chapter li ul {
+  margin: 1em 0 1.5em;
+}
+
+ol.chapter li li {
+  list-style: square;
+  margin: 0 0 1em;
+}
+
+.header {
+  padding-top: 4em;
+  margin-top: -4em;
+}
+
+.content h1 {
+  border-left: 10px solid #555;
+  padding-left: 20px;
+  margin: 3rem 0 3rem -30px;
+  line-height: 150%;
+}
+
+.content h1:nth-child(1) {
+  border: 0;
+  background: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.content time:nth-child(1) {
+  margin-bottom: 4rem;
+  display: block;
+}
+
+body {
+  line-height: 170%;
+}
+
+.hljs {
+  background: #fafafa;
+  line-height: 120%;
+  padding: 1.5em;
+}
+
+.sidebar ul.innerLink {
+  margin-top: 1em;
+  padding-left: 2em;
+}
+
+.sidebar ul.innerLink li {
+  list-style: decimal;
+  margin: 0 0 0.5em;
+  padding-left: 0.5em;
+}

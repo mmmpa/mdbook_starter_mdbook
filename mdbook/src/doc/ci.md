@@ -1,0 +1,10 @@
+# CircleCI でデプロイ
+
+CircleCI 側の環境変数に以下の環境変数を設定します
+
+- AWS_ACCESS_KEY_ID
+- AWS_SECRET_ACCESS_KEY
+- AWS_DEFAULT_REGION
+- BUCKET_NAME
+- DEPLOYMENT=true
+- BUILDING=true
