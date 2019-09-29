@@ -1,5 +1,7 @@
 # mdbook Starter
 
+<i class="fa fa-github"></i> [https://github.com/mmmpa/mdbook_starter](https://github.com/mmmpa/mdbook_starter)
+
 mdbook starter はなるべく手早く mdbook をデプロイすることを目的としています。
 
 基本的に
