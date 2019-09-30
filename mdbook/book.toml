@@ -1,8 +1,9 @@
 [book]
-authors = []
-language = "en"
+authors = ["mmmpa"]
+language = "ja"
 multilingual = false
 src = "src"
+title = "mdBook Starter mdBook"
 
 [output.html]
 additional-css = ["theme/custom.css"]
