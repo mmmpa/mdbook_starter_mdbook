@@ -1,4 +1,4 @@
-# mdbook をつくる
+# mdBook をつくる
 
 ## 準備
 
@@ -16,13 +16,13 @@ cp env.sample env
 docker-compose up
 ```
 
-最初の起動では mdbook ディレクトリに mdbook ファイルが作成されます。
+最初の起動では `mdbook` ディレクトリに mdBook ファイルが作成されます。
 
 [http:localhost:3000](http:localhost:3000) (指定したポートに変更する) へアクセスすると、ページが表示されます。
 
 ## 編集
 
-mdbook を起動した上で mdbook ディレクトリ以下のファイルを変更するとページに反映されます。
+mdBook を起動した上で `mdbook` ディレクトリ以下のファイルを変更するとページに反映されます。
 
 細かいルールは [mdBook \- mdBook Documentation](https://rust-lang-nursery.github.io/mdBook/) を参照してください。
 

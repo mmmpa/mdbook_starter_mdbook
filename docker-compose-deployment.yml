@@ -12,5 +12,6 @@ services:
      - ./mdbook:/mdbook
     command: >
       bash -c '
-      aws s3 sync book s3://$BUCKET_NAME;
+      mdbook build -d tmp;
+      aws s3 sync tmp s3://$BUCKET_NAME;
       '
